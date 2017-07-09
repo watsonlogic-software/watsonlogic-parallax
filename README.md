@@ -45,7 +45,7 @@ Parallax scrolling effect web component for Polymer 2.0.
 </watsonlogic-parallax>
 ```
 
-![Demo Preview](https://raw.githubusercontent.com/watsonlogic-software/watsonlogic-parallax/preview.gif)
+![Demo Preview](https://github.com/watsonlogic-software/watsonlogic-parallax/blob/master/preview.gif?raw=true)
 
 ## License
 Apache License 2.0
