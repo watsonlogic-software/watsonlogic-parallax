@@ -1,0 +1,88 @@
+<link rel="import" href="../polymer/polymer-element.html">
+<script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+
+<dom-module id="watsonlogic-parallax">
+  <template>
+    <style>
+      :host {
+        display: block;
+        --parallax-background-height: 300px;
+        --parallax-slogan-top: 150px;
+        --parallax-background-image: url('https://static.pexels.com/photos/2324/skyline-buildings-new-york-skyscrapers.jpg');
+      }
+
+      .parallax-background {
+        background: var(--parallax-background-image);
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: var(--parallax-background-height);
+        position:relative;
+      }
+
+      .slogan {
+        bottom: 0;
+        left: 0;
+        opacity: 1;
+        position: absolute;
+        right: 0;
+        text-align: center;
+        top: var(--parallax-slogan-top);
+        transform-origin: center top !important;
+      }
+    </style>
+
+    <div class="parallax-background">
+      <div id="slogan" class="slogan">[[parallaxText]]</div>
+    </div>
+  </template>
+
+  <script>
+    /**
+     * `watsonlogic-parallax`
+     * Parallax scrolling effect web component for Polymer 2.0.
+     *
+     * @customElement
+     * @polymer
+     * @demo demo/index.html
+     */
+    class WatsonlogicParallax extends Polymer.Element {
+      static get is() { return 'watsonlogic-parallax'; }
+      static get properties() {
+        return {
+          parallaxText: {
+            type: String
+          },
+          parallaxImage: {
+            type: String,
+            notify: true,
+            reflectToAttribute: true
+          },
+          parallaxImageHeight: {
+            type: String,
+            notify: true,
+            reflectToAttribute: true
+          }
+        };
+      }
+
+      ready(){
+        super.ready();
+        var self = this;
+
+        self.parallaxImage = self.parallaxImage || 'https://static.pexels.com/photos/2324/skyline-buildings-new-york-skyscrapers.jpg';
+        Number.isNaN(parseInt(self.parallaxImageHeight))? '300': parseInt(self.parallaxImageHeight);
+
+        this.updateStyles({
+          '--parallax-background-image': 'url(' + self.parallaxImage + ')',
+          '--parallax-background-height': self.parallaxImageHeight+'px',
+          '--parallax-slogan-top': parseInt(self.parallaxImageHeight)/2+'px'
+        });
+
+      }
+    }
+
+    window.customElements.define(WatsonlogicParallax.is, WatsonlogicParallax);
+  </script>
+</dom-module>
