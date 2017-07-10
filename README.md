@@ -1,6 +1,6 @@
 # \<watsonlogic-parallax\>
 
-Parallax scrolling effect web component made with Polymer 2.0. Import [Web Component polyfills](https://github.com/webcomponents/webcomponentsjs) if needed.
+Parallax scrolling effect [web component](https://www.webcomponents.org/element/watsonlogic-software/watsonlogic-parallax) made with Polymer 2.0. Import [Web Component polyfills](https://github.com/webcomponents/webcomponentsjs) if needed.
 
 <!--
 ```
