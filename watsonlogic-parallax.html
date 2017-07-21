@@ -1,4 +1,4 @@
-<link rel="import" href="../polymer/polymer-element.html">
+<link rel="import" href="../polymer/polymer.html">
 
 <dom-module id="watsonlogic-parallax">
   <template>
@@ -46,29 +46,25 @@
      * @polymer
      * @demo demo/index.html
      */
-    class WatsonlogicParallax extends Polymer.Element {
-      static get is() { return 'watsonlogic-parallax'; }
-      static get properties() {
-        return {
-          parallaxText: {
-            type: String
-          },
-          parallaxImage: {
-            type: String,
-            notify: true,
-            reflectToAttribute: true
-          },
-          parallaxImageHeight: {
-            type: String,
-            notify: true,
-            reflectToAttribute: true
-          }
-        };
-      }
-
-      ready(){
-        super.ready();
-        var self = this;
+    Polymer({
+      is: 'watsonlogic-parallax',
+      properties: {
+        parallaxText: {
+          type: String
+        },
+        parallaxImage: {
+          type: String,
+          notify: true,
+          reflectToAttribute: true
+        },
+        parallaxImageHeight: {
+          type: String,
+          notify: true,
+          reflectToAttribute: true
+        }
+      },
+      ready: function() {
+        let self = this;
 
         self.parallaxImage = self.parallaxImage || 'https://static.pexels.com/photos/2324/skyline-buildings-new-york-skyscrapers.jpg';
         Number.isNaN(parseInt(self.parallaxImageHeight))? '300': parseInt(self.parallaxImageHeight);
@@ -78,10 +74,7 @@
           '--parallax-background-height': self.parallaxImageHeight+'px',
           '--parallax-slogan-top': parseInt(self.parallaxImageHeight)/2+'px'
         });
-
-      }
-    }
-
-    window.customElements.define(WatsonlogicParallax.is, WatsonlogicParallax);
+      },
+    });
   </script>
 </dom-module>
