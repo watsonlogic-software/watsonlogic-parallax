@@ -15,7 +15,7 @@ Parallax scrolling effect [web component](https://www.webcomponents.org/element/
 
 ## Known Limitations
 
-This component component currently uses background-attachment:fixed, which is not supported in all browsers (works on most desktop browsers, but has limited support on mobile browsers). According to Can I Use, the `fixed` CSS value is currently only partially supported on iOS Safari and Chrome for Android. We will work towards a more universal solution in the future.
+This component component currently uses `background-attachment:fixed`, which is not supported in all browsers (works on most desktop browsers, but has limited support on mobile browsers). According to Can I Use, the `fixed` CSS value is currently only partially supported on iOS Safari and Chrome for Android. We will work towards a more universal solution in the future.
 
 ## License
 
